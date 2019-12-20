@@ -5,13 +5,13 @@ import kotlin.system.*
 
 fun main() = runBlocking {
 
-    val time = measureTimeMillis {
+    /*val time = measureTimeMillis {
         val one = doSomethingUsefulOne()
         val two = doSomethingUsefulTwo()
         println("The answer is ${one + two}")
     }
     println("Completed in $time ms")
-
+*/
     /*val time = measureTimeMillis {
         val one = async { doSomethingUsefulOne() }
         val two = async { doSomethingUsefulTwo() }
@@ -38,11 +38,15 @@ fun main() = runBlocking {
 }
 
 suspend fun doSomethingUsefulOne(): Int {
+    println("One1")
     delay(1000L) // pretend we are doing something useful here
+    println("One2")
     return 13
 }
 
 suspend fun doSomethingUsefulTwo(): Int {
+    println("Two1")
     delay(1000L) // pretend we are doing something useful here, too
+    println("Two2")
     return 29
 }
