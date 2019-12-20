@@ -2,19 +2,22 @@ package root
 
 import kotlinx.coroutines.*
 
-fun main() = runBlocking{
-    val job1 = GlobalScope.launch {
+fun main() {
+    GlobalScope.launch {
         println("1")
         delay(1000L)
         println("World!")
     }
-    val job2 = GlobalScope.launch {
+    GlobalScope.launch {
         println("2")
         delay(2000L)
         println("3")
     }
     println("Hello,")
-    job1.join()
-    job2.join()
+    runBlocking {
+        println("4")
+         delay(3000L)
+        println("5")
+     }
     println("Done!")
 }
